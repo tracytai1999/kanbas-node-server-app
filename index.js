@@ -10,7 +10,7 @@ import AssignmentRoutes from './Kanbas/Assignments/routes.js';
 import EnrollmentRoutes from './Kanbas/Enrollments/routes.js';
 import Hello from "./Hello.js"
 import Kanbas from './Kanbas/index.js';
-
+NETLIFY_URL = 'https://a5--ziyangtai-kanbas.netlify.app'
 const app = express();
 app.use(cors({
     credentials: true,
