@@ -14,8 +14,9 @@ NETLIFY_URL = 'https://a5--ziyangtai-kanbas.netlify.app'
 const app = express();
 app.use(cors({
     credentials: true,
-    origin: process.env.NETLIFY_URL || "http://localhost:3000"
+    origin: process.env.NETLIFY_URL || "http://localhost:3000",
 })); 
+console.log("CORS Origin:", process.env.NETLIFY_URL)
 app.use(express.json());
 const sessionOptions = {
     secret: process.env.SESSION_SECRET || "kanbas",
