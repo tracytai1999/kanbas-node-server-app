@@ -12,7 +12,8 @@ import Hello from "./Hello.js"
 import Kanbas from './Kanbas/index.js';
 import mongoose from "mongoose";
 import "dotenv/config";
-
+console.log("Server is starting...");
+console.log("Environment Variables:", process.env);
 const CONNECTION_STRING = process.env.MONGO_CONNECTION_STRING || "mongodb://127.0.0.1:27017/kanbas"
 mongoose.connect(CONNECTION_STRING);
 const app = express();
