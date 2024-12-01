@@ -2,7 +2,7 @@ import model from "./model.js";
 import Database from "../Database/index.js";
 
 export function deleteCourse(courseId) {
-  return model.deleteOne({ _id: courseId });
+  return model.deleteOne({ _id: courseId});
 } 
 export function findAllCourses() {
   return model.find().lean();
@@ -15,6 +15,7 @@ export function findCoursesForEnrolledUser(userId) {
 }
 export function createCourse(course) {
   delete course._id;
+  course._id = `RS${Date.now()}`;
   return model.create(course); 
 }
 export function updateCourse(courseId, courseUpdates) {
