@@ -70,9 +70,12 @@ export default function CourseRoutes(app) {
   const createCourse = async (req, res) => {
     const course = await dao.createCourse(req.body);
     const currentUser = req.session["currentUser"];
+    console.log("courses/routes.js createcourse called", course._id)
     if (currentUser) {
       await enrollmentsDao.enrollUserInCourse(currentUser._id, course._id);
+      console.log("enrollUserInCourse with course_id", course._id)
     } 
+    res.send(course);
   };
   app.post("/api/courses", createCourse);
  
